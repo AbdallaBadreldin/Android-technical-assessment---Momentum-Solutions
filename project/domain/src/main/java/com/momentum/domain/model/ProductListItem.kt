@@ -5,6 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
+
 @Entity(tableName = "products")
 data class ProductListItem(
     @SerializedName("id")
@@ -22,4 +23,4 @@ data class ProductListItem(
     val rating: Rating?,
     @SerializedName("title")
     val title: String?
-): Serializable
+) : Serializable

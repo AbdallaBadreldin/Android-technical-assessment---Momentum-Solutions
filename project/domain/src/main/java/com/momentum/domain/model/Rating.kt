@@ -9,4 +9,4 @@ data class Rating(
     val count: Int?,
     @SerializedName("rate")
     val rate: Double?
-): Serializable
+) : Serializable

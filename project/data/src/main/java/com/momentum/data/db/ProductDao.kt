@@ -4,9 +4,9 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.momentum.domain.model.ProductList
 import com.momentum.domain.model.ProductListItem
 import kotlinx.coroutines.flow.Flow
+
 @Dao
 interface ProductDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
