@@ -23,10 +23,12 @@
             tools:src="@tools:sample/avatars" />
 
         <TextView
+            android:textSize="24sp"
+            android:textColor="@color/black"
             android:id="@+id/tv_productTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -44,6 +46,7 @@
         <RatingBar
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
+            android:background="@color/yellow"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             app:layout_constraintEnd_toEndOf="@+id/tv_productDesc"
