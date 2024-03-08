@@ -4,7 +4,7 @@ import com.momentum.domain.model.ProductListItem
 import retrofit2.Response
 import retrofit2.http.GET
 
-interface ProductApi {
+interface ProductApiService {
     @GET("products")
     suspend fun getProductsList(
     ): Response<ArrayList<ProductListItem>>

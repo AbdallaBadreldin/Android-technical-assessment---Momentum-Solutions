@@ -13,7 +13,7 @@ interface ProductDao {
     suspend fun addProducts(products: ArrayList<ProductListItem>)
 
     @Query("SELECT * FROM products")
-    fun getAllProducts(): Flow<ArrayList<ProductListItem>>
+    fun getAllProducts(): ArrayList<ProductListItem>
 
     @Query("SELECT * FROM products WHERE id = :productId")
     fun getProductById(productId: Int): Flow<ProductListItem>

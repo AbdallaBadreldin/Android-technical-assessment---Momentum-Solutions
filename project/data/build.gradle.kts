@@ -53,5 +53,8 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
 
+    //for Serializable annotation using in type converter
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+
 
 }
