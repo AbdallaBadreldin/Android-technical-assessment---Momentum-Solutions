@@ -4,6 +4,7 @@ package com.momentum.domain.model
 import androidx.room.ColumnInfo
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
+
 @kotlinx.serialization.Serializable
 data class Rating(
     @SerializedName("count")
@@ -12,4 +13,4 @@ data class Rating(
     @SerializedName("rate")
     @ColumnInfo("rate")
     val rate: Double?
-):Serializable
+) : Serializable

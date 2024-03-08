@@ -6,14 +6,11 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -52,7 +49,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideGeneralApiServices( retrofit: Retrofit): ProductApiService {
+    fun provideGeneralApiServices(retrofit: Retrofit): ProductApiService {
         return retrofit.create(ProductApiService::class.java)
     }
 }

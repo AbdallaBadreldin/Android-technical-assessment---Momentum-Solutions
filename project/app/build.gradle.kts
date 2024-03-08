@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id ("kotlinx-serialization")
+    id("kotlinx-serialization")
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
@@ -73,13 +73,13 @@ dependencies {
     //glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
-   //interceptor
+    //interceptor
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
     //room database
     implementation("androidx.room:room-ktx:2.6.1")
-    kapt ("androidx.room:room-compiler:2.6.1")
-    androidTestImplementation ("androidx.room:room-testing:2.6.1")
-    annotationProcessor ("android.arch.persistence.room:compiler:1.1.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    androidTestImplementation("androidx.room:room-testing:2.6.1")
+    annotationProcessor("android.arch.persistence.room:compiler:1.1.1")
 
 }

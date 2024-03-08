@@ -15,10 +15,6 @@ class ProductsAdapter(
     private var list: ArrayList<ProductListItem>,
     private val onRootClicked: (item: ProductListItem) -> Unit
 ) : RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
-    fun updateList(list: ArrayList<ProductListItem>) {
-        this.list = list
-        notifyDataSetChanged()
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)

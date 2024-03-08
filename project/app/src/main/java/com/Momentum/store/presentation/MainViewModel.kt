@@ -1,6 +1,5 @@
 package com.Momentum.store.presentation
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -23,12 +22,11 @@ class MainViewModel @Inject constructor(private val getProducts: GetProductListU
     val error: LiveData<String> get() = _error
 
     fun getProducts() {
-        Log.e("TAG","works fine")
         viewModelScope.launch {
             getProducts.invoke().collect { requestStatus ->
                 when (requestStatus) {
                     is RequestStatus.Success -> {
-                        _product.postValue(requestStatus.data!! as ArrayList<ProductListItem>?)
+                        _product.postValue(requestStatus.data as ArrayList<ProductListItem>?)
                         _isLoad.postValue(false)
                     }
 

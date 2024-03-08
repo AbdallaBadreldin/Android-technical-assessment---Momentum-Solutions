@@ -5,7 +5,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.momentum.domain.model.ProductListItem
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ProductDao {

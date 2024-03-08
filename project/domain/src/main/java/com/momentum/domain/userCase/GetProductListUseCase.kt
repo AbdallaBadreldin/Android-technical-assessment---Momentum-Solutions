@@ -4,8 +4,8 @@ import com.momentum.domain.repository.ProductRepository
 import javax.inject.Inject
 
 data class GetProductListUseCase @Inject constructor(
- val productsRepository: ProductRepository
-){
+    val productsRepository: ProductRepository
+) {
     suspend operator fun invoke() = productsRepository.getProductsFromApi()
 
 }

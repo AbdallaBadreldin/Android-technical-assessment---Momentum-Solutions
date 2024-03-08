@@ -1,7 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id ("kotlinx-serialization")
+    id("kotlinx-serialization")
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
 }
@@ -62,6 +62,6 @@ dependencies {
     //serializable
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
 }
-    kapt {
-        correctErrorTypes = true
-    }
+kapt {
+    correctErrorTypes = true
+}
