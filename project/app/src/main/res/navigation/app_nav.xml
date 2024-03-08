@@ -9,7 +9,13 @@
         android:id="@+id/detailsFragment"
         android:name="com.Momentum.store.presentation.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+
+        <argument
+            android:name="productItem"
+            app:argType="com.momentum.domain.model.ProductListItem" />
+    </fragment>
+
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.Momentum.store.presentation.MainFragment"
@@ -19,6 +25,9 @@
             android:id="@+id/action_mainFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"
             app:enterAnim="@android:anim/bounce_interpolator"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@android:anim/anticipate_overshoot_interpolator"
+            app:popExitAnim="@android:anim/bounce_interpolator"
             app:popUpTo="@id/mainFragment" />
     </fragment>
 

@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id ("kotlinx-serialization")
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
 }
@@ -57,6 +58,9 @@ dependencies {
     // Room DB
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
+
+    //serializable
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
 }
     kapt {
         correctErrorTypes = true

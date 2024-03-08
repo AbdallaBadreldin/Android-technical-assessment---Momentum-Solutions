@@ -1,22 +1,17 @@
 package com.Momentum.store.presentation
 
-import android.content.Context
 import android.os.Bundle
-import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.Momentum.store.databinding.FragmentMainBinding
 import com.momentum.domain.model.ProductListItem
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.ViewModelLifecycle
 
 @AndroidEntryPoint
 class MainFragment : Fragment() {
@@ -28,7 +23,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         setUpObservers()
         viewModel.getProducts()
@@ -61,7 +56,11 @@ class MainFragment : Fragment() {
     }
 
     private fun goToProductDetails(item: ProductListItem) {
-//      findNavController().navigate(FragmentD.)
+        findNavController().navigate(
+            directions = MainFragmentDirections.actionMainFragmentToDetailsFragment(
+                item
+            )
+        )
     }
 
     private fun setUiNoData(flag: Boolean) {

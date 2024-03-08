@@ -1,11 +1,12 @@
 package com.momentum.domain.model
 
-
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.Serializable
 
+@Serializable
 @Entity
 data class ProductListItem(
     @SerializedName("id")
@@ -30,4 +31,4 @@ data class ProductListItem(
     @SerializedName("title")
     @ColumnInfo("title")
     val title: String?
-)
+) : java.io.Serializable

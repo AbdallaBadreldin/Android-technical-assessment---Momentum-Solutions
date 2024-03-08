@@ -1,8 +1,10 @@
 plugins {
-    kotlin("kapt")
-    id("com.google.dagger.hilt.android")
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlinx-serialization")
+    id("androidx.navigation.safeargs.kotlin")
+    id("com.google.dagger.hilt.android")
+    kotlin("kapt")
 }
 
 android {
@@ -78,6 +80,6 @@ dependencies {
     implementation("androidx.room:room-ktx:2.6.1")
     kapt ("androidx.room:room-compiler:2.6.1")
     androidTestImplementation ("androidx.room:room-testing:2.6.1")
-    annotationProcessor ("android.arch.persistence.room:compiler:1.0.0")
+    annotationProcessor ("android.arch.persistence.room:compiler:1.1.1")
 
 }
