@@ -16,7 +16,7 @@ object RepositoryModule {
     fun providesProductRepository(
         productRemoteDataSource: ProductApiService,
         productLocalDataSource: ProductDao
-    ): ProductRepository =
+    ): ProductRepositoryImpl =
         ProductRepositoryImpl(productRemoteDataSource, productLocalDataSource)
 
 }

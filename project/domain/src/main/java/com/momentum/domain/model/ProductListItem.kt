@@ -1,26 +1,33 @@
 package com.momentum.domain.model
 
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
-@Entity(tableName = "products")
+@Entity
 data class ProductListItem(
     @SerializedName("id")
-    @PrimaryKey(autoGenerate = false)
+    @ColumnInfo(name = "id")
+    @PrimaryKey(autoGenerate = true)
     val id: Int?,
     @SerializedName("category")
+    @ColumnInfo("category")
     val category: String?,
     @SerializedName("description")
+    @ColumnInfo("description")
     val description: String?,
     @SerializedName("image")
+    @ColumnInfo("image")
     val image: String?,
     @SerializedName("price")
+    @ColumnInfo("price")
     val price: Double?,
     @SerializedName("rating")
+    @ColumnInfo("rating")
     val rating: Rating?,
     @SerializedName("title")
+    @ColumnInfo("title")
     val title: String?
-) : Serializable
+)

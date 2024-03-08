@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    kotlin("kapt")
 }
 
 android {
@@ -48,8 +50,14 @@ dependencies {
     // Gson converter
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
+    //hilt
+    implementation("com.google.dagger:hilt-android:2.51")
+    kapt("com.google.dagger:hilt-android-compiler:2.51")
+
     // Room DB
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
-
 }
+    kapt {
+        correctErrorTypes = true
+    }

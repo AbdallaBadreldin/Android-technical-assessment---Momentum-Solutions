@@ -10,16 +10,13 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ProductDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addProducts(products: ArrayList<ProductListItem>)
+    suspend fun addProducts(products: List<ProductListItem>)
 
-    @Query("SELECT * FROM products")
-    fun getAllProducts(): ArrayList<ProductListItem>
-
-    @Query("SELECT * FROM products WHERE id = :productId")
-    fun getProductById(productId: Int): Flow<ProductListItem>
+    @Query("SELECT * FROM productlistitem")
+    fun getAllProducts(): List<ProductListItem>
 
     // TODO ("CAUTION")
     //dangerous command PLEASE use it carefully xD Just kidding
-    @Query("DELETE FROM products")
+    @Query("DELETE FROM productlistitem")
     suspend fun deleteAllProducts()
 }

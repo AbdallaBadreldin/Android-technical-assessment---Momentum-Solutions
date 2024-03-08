@@ -14,8 +14,7 @@ object UseCaseModule {
     @Provides
     @Singleton
     fun provideGetProductUseCase(
-        repo:
-        ProductRepositoryImpl
+        repo: ProductRepositoryImpl
     ): GetProductListUseCase {
         return GetProductListUseCase(repo)
     }

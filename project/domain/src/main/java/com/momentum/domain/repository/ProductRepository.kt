@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.FlowCollector
 import retrofit2.Response
 
 interface ProductRepository {
-    suspend fun getProductsFromApi(): Flow<RequestStatus<ArrayList<ProductListItem>>>
-    suspend fun addProductsToDB(data: ArrayList<ProductListItem>)
-    fun getProductsFromDB(): ArrayList<ProductListItem>
+    suspend fun getProductsFromApi(): Flow<RequestStatus<List<ProductListItem>>>
+    suspend fun addProductsToDB(data: List<ProductListItem>)
+    fun getProductsFromDB(): List<ProductListItem>
 }

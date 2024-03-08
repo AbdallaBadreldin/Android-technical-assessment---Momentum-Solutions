@@ -19,20 +19,8 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-    private const val baseurl = Constants.BASE_URL
 
-    @Provides
-    @Singleton
-    fun provideAuthIntercept(): Interceptor {
-        return Interceptor { chain ->
-            val newRequest: Request =
-                chain.request().newBuilder()
-                    .addHeader("User-Agent", "android")
-                    .addHeader("Accept", "application/json")
-                    .build()
-            chain.proceed(newRequest)
-        }
-    }
+    private const val baseurl = Constants.BASE_URL
 
     @Provides
     @Singleton
@@ -44,11 +32,9 @@ object NetworkModule {
     @Singleton
     fun provideOkHttpClient(
         logging: HttpLoggingInterceptor,
-        interceptor: Interceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(logging)
-            .addInterceptor(interceptor)
             .connectTimeout(15, TimeUnit.SECONDS) // connect timeout
             .readTimeout(15, TimeUnit.SECONDS)
             .build()
@@ -69,5 +55,4 @@ object NetworkModule {
     fun provideGeneralApiServices( retrofit: Retrofit): ProductApiService {
         return retrofit.create(ProductApiService::class.java)
     }
-
 }

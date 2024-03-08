@@ -7,8 +7,9 @@ import com.momentum.domain.repository.ProductRepository
 import com.momentum.domain.utils.RequestStatus
 import kotlinx.coroutines.flow.flow
 import retrofit2.Response
+import javax.inject.Inject
 
-class ProductRepositoryImpl(
+class ProductRepositoryImpl @Inject constructor(
     private val productRemoteDataSource: ProductApiService,
     private val productLocalDataSource: ProductDao
 ) : ProductRepository {
@@ -30,11 +31,11 @@ class ProductRepositoryImpl(
         }
     }
 
-    override fun getProductsFromDB(): ArrayList<ProductListItem> {
+    override fun getProductsFromDB(): List<ProductListItem> {
         return productLocalDataSource.getAllProducts()
     }
 
-    override suspend fun addProductsToDB(data: ArrayList<ProductListItem>) {
+    override suspend fun addProductsToDB(data: List<ProductListItem>) {
         return productLocalDataSource.addProducts(data)
     }
 }

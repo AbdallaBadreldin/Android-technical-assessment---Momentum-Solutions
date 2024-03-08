@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    kotlin("kapt")
 }
 
 android {
@@ -47,14 +49,19 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation (group= "com.squareup.okhttp3", name= "okhttp", version= "4.12.0")
 
-    //ROOM DB
-    val room_version = "2.6.1"
-    implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
-    implementation("androidx.room:room-ktx:$room_version")
+    //room database
+    implementation("androidx.room:room-ktx:2.6.1")
+    kapt ("androidx.room:room-compiler:2.6.1")
+    androidTestImplementation ("androidx.room:room-testing:2.6.1")
+    annotationProcessor ("android.arch.persistence.room:compiler:1.0.0")
+    //hilt
+    implementation("com.google.dagger:hilt-android:2.51")
+    kapt("com.google.dagger:hilt-android-compiler:2.51")
 
     //for Serializable annotation using in type converter
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
 
-
+}
+kapt {
+    correctErrorTypes = true
 }
